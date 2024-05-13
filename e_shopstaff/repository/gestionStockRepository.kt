@@ -1,0 +1,29 @@
+package com.example.e_shopstaff.repository
+
+import com.example.e_shopstaff.data.gestionstock
+import kotlinx.coroutines.flow.Flow
+
+interface gestionStockRepository {
+
+    fun getAllGestionStockStream(): Flow<List<gestionstock>>
+
+    /**
+     * Retrieve an item from the given data source that matches with the [id].
+     */
+    fun getGestionStockStream(id: Int): Flow<gestionstock?>
+
+    /**
+     * Insert item in the data source
+     */
+    suspend fun insertGestionStock(item: gestionstock)
+
+    /**
+     * Delete item from the data source
+     */
+    suspend fun deleteGestionStock(item: gestionstock)
+
+    /**
+     * Update item in the data source
+     */
+    suspend fun updateGestionStock(item: gestionstock)
+}
